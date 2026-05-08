@@ -2,13 +2,15 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 
+#include <stdexcept>
+
 template<typename T>
 class TPQueue {
  private:
     struct Node {
         T data;
         Node* next;
-        Node(const T& val) : data(val), next(nullptr) {}
+        explicit Node(const T& val) : data(val), next(nullptr) {}
     };
 
     Node* head;
